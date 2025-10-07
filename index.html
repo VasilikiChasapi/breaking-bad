@@ -1,33 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <link rel="stylesheet" href="./styles.css">
-        
-    </head> 
-    <body>
-        <div class="container">
-            <div >
-                <h1 class = "header_text">Tha doume breaking bad?</h1>
-            </div>
-            <div class="gif_container">
-                <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMngzdm1kaTVraWdhcHEyb3duZXV3NnEybnVkb3p4eHhidzJ6cGF4YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/XUA7ZZcBl0McuVqwd8/giphy.gif">
-            </div>
-            <div class = "buttons">
-                <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
-                <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
-                <script>
-                    function nextPage() {
-                        window.location.href = "yes.html";
-                    }
-                    
-                    function moveButton() {
-                        var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
-                        var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
-                        document.getElementById('noButton').style.left = `${x}px`;
-                        document.getElementById('noButton').style.top = `${y}px`;
-                    }
-                </script> 
-            </div>
-        </div>
-       
-    </body> 
+<html lang="el">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Breaking Bad — Invite</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" style="position: relative; width: 100%; max-width: 900px;">
+    <div>
+      <h1 class="header_text">Tha doume breaking bad?</h1>
+    </div>
+
+    <div class="gif_container" style="margin: 20px 0;">
+      <img src="https://i.giphy.com/media/XUA7ZZcBl0McuVqwd8/giphy.gif" alt="Cat aka me" class="gif">
+    </div>
+
+    <div class="buttons" style="position: relative; height: 80px;">
+      <!-- Τα κουμπιά είναι position: absolute από το CSS (τα CSS σου έχουν #noButton/#yesButton) -->
+      <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+      <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+    </div>
+  </div>
+
+  <script>
+    function nextPage(){
+      window.location.href = "yes.html";
+    }
+
+    function moveButton(){
+      const btn = document.getElementById('noButton');
+      const btnW = btn.offsetWidth;
+      const btnH = btn.offsetHeight;
+
+      // Πλαίσιο όπου κινείται το κουμπί: το viewport
+      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+      const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+
+      // Όρια ώστε κουμπί να μην βγει εκτός οθόνης
+      const padding = 20;
+      const maxX = Math.max(0, vw - btnW - padding);
+      const maxY = Math.max(0, vh - btnH - padding);
+
+      const x = Math.floor(Math.random() * maxX) + padding;
+      const y = Math.floor(Math.random() * maxY) + padding;
+
+      // Κάνουμε
