@@ -17,27 +17,24 @@
     </div>
 
     <div class="buttons" style="position: relative; height: 80px;">
-      <!-- Τα κουμπιά είναι position: absolute από το CSS (τα CSS σου έχουν #noButton/#yesButton) -->
       <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
       <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
     </div>
   </div>
 
   <script>
-    function nextPage(){
+    function nextPage() {
       window.location.href = "yes.html";
     }
 
-    function moveButton(){
+    function moveButton() {
       const btn = document.getElementById('noButton');
       const btnW = btn.offsetWidth;
       const btnH = btn.offsetHeight;
 
-      // Πλαίσιο όπου κινείται το κουμπί: το viewport
       const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
       const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
 
-      // Όρια ώστε κουμπί να μην βγει εκτός οθόνης
       const padding = 20;
       const maxX = Math.max(0, vw - btnW - padding);
       const maxY = Math.max(0, vh - btnH - padding);
@@ -45,4 +42,10 @@
       const x = Math.floor(Math.random() * maxX) + padding;
       const y = Math.floor(Math.random() * maxY) + padding;
 
-      // Κάνουμε
+      btn.style.position = 'absolute';
+      btn.style.left = x + 'px';
+      btn.style.top = y + 'px';
+    }
+  </script>
+</body>
+</html>
