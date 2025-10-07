@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive GIF</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center horizontally */
+            justify-content: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default margin */
+            background-color: rgb(189, 225, 122);
+        }
+
+        .container {
+            text-align: center; /* Center text inside container */
+        }
+
+        .header_text {
+            margin-top: 10px; /* Space above the header */
+            font-size: 2rem; /* Font size */
+            color: white; /* Text color */
+        }
+
+        .gif_container iframe {
+            width: 800px; /* Fixed width */
+            height: 600px; /* Fixed height */
+            display: block; /* Center as block element */
+            margin: 0 auto; /* Center the GIF */
+        }
+
+        p {
+            margin-top: 10px; /* Spacing above the link */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="gif_container">
+            <iframe src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWRvY2pkMWI5eGF3Z3pmNXoyOTZkbjIxMDRzbDNud2UxM2dhaWNjeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/rrasLFSTyi4Th1e8Xo/giphy.gif" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        </div>
+        <h1 class="header_text">Niiii!!</h1>
+        <p>
+            <a href="https://giphy.com/gifs/leroypatterson-cat-glasses-CjmvTCZf2U3p09Cn0h"></a>
+        </p>
+    </div>
+</html>
