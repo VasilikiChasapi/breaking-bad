@@ -7,12 +7,12 @@ body {
   align-items: center;
   flex-direction: column;
 
-  /* Gradient background με πράσινο χρώμα */
+  
   background: linear-gradient(135deg, rgb(189, 225, 122), rgb(160, 210, 100));
   position: relative;
 }
 
-/* Προσθήκη λαμπυρισμάτων */
+/* lampirisma */
 body::before {
   content: '';
   position: absolute;
