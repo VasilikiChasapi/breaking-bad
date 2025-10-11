@@ -2,11 +2,34 @@ body {
   margin: 0;
   height: 100vh;
   overflow: hidden;
-  background-color: rgb(189, 225, 122); /* πράσινο όπως στην πρώτη σελίδα */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  /* Gradient background με πράσινο χρώμα */
+  background: linear-gradient(135deg, rgb(189, 225, 122), rgb(160, 210, 100));
+  position: relative;
+}
+
+/* Προσθήκη λαμπυρισμάτων */
+body::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+  animation: sparkle 3s infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes sparkle {
+  0% { transform: rotate(0deg) scale(1); opacity: 0.3; }
+  50% { transform: rotate(180deg) scale(1.1); opacity: 0.6; }
+  100% { transform: rotate(360deg) scale(1); opacity: 0.3; }
 }
 
 .hooray {
@@ -14,7 +37,7 @@ body {
   font-size: 100px;
   font-weight: 900;
   color: white; /* γράμματα λευκά */
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
   z-index: 10;
   position: relative;
   animation: pop 0.8s ease-in-out;
